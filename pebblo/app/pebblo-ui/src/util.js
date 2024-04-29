@@ -115,3 +115,14 @@ export const getFileSize = (size) => {
   }
   return "-";
 };
+
+export const getFrameworkLogo = (framework) => {
+  switch (framework) {
+    case "langchain":
+      return { src: "static/langchain-icon.png", width: "35px" };
+    case "llama-index":
+      return { src: "static/llama-icon.png", width: "35px" };
+    default:
+      return { src: null, width: "0px" };
+  }
+};

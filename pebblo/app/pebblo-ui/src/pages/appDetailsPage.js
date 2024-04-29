@@ -1,4 +1,4 @@
-import { getFormattedDate } from "../util.js";
+import { getFormattedDate, getFrameworkLogo } from "../util.js";
 import {
   AccordionSummary,
   AccordionDetails,
@@ -67,12 +67,15 @@ export function AppDetailsPage() {
   // </div>
   // <div class="divider"></div>
 
+  const frameworkLogoAttr = getFrameworkLogo(APP_DATA?.framework?.name);
   return /*html*/ `
     <div class="flex gap-6 flex-col h-full overflow-auto">
       <div class="flex justify-between">
         <div class="flex gap-3">
-           <div class="bg-surface-10 pl-2 pr-2 pt-4 pb-4 rounded-lg">
-             <img src="${MEDIA_URL}/static/langchain-icon.png" alt="App icon" />
+           <div class="flex items-center justify-center bg-surface-10 pl-2 pr-2 pt-2 pb-2 rounded-lg">
+             <img src="${MEDIA_URL}/${
+    frameworkLogoAttr?.src
+  }" alt="App icon" width=${frameworkLogoAttr?.width} />
            </div>
            <div class="flex flex-col gap-1 inter surface-10">
              <div class="font-24">${APP_DATA?.name}</div>

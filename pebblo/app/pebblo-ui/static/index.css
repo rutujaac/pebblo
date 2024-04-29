@@ -1266,3 +1266,8 @@ dialog::backdrop {
   font-weight: 200;
   font-size: 12px;
 }
+
+.framework-image {
+  width: 35px;
+  height: 30px;
+}
